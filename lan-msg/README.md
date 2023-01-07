@@ -1,3 +1,3 @@
 # lan-msg
 
-Bozza messaggi su rete lan.
+Progetto messaggi su rete LAN.

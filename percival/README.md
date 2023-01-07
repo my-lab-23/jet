@@ -1,3 +1,3 @@
-# Percival
+# percival
 
-Bozza Simon Says game per Android.
+Progetto Simon Says game per Android.

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Percival</string>
+    <string name="volume">15</string>
 </resources>
