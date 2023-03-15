@@ -6,6 +6,7 @@ import io.ktor.client.request.*
 import io.ktor.client.request.forms.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
+import kotlinx.serialization.json.JsonObject
 import java.io.IOException
 
 val client = HttpClient(CIO)
@@ -19,19 +20,18 @@ suspend fun isConnected(address: String): Boolean {
     }
 }
 
-suspend fun invia(msg: String): Boolean {
+suspend fun invia(jsonObject: JsonObject): Boolean {
+
     return try {
 
         client.submitForm(
             url = "http://192.168.1.23:8080/msg",
             formParameters = Parameters.build {
-                append("msg", msg)
+                append("msg", jsonObject.toString())
             }
         )
 
         true
 
-    } catch (e: IOException) {
-        false
-    }
+    } catch (e: IOException) { false }
 }

@@ -8,6 +8,14 @@ import com.example.scrivi.ui.MyScrivi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-            setContent { MyScrivi() }
+
+        //
+
+        val msg = MyMessage("Ciao!")
+        println(msg.toJsonString())
+
+        //
+
+        setContent { MyScrivi() }
     }
 }

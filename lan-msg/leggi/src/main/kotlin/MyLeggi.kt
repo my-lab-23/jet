@@ -67,7 +67,15 @@ fun myLeggi() {
 
 fun msgs(): List<String> {
 
-    return FileReader("/home/ema/data/data").readLines().toString()
-        .replace("[", "").replace("]", "").replace(" , ", " ")
-        .split("|*|").reversed()
+    val msgs = FileReader("/home/ema/data/data").readLines()
+    val formattedMsg = mutableListOf<String>()
+
+    msgs.forEach {
+
+        val msg = MyMessage.fromJsonString(it)
+        val date = MyMessage.timestampToString(msg.timestamp)
+        formattedMsg.add("$date ${msg.msg}")
+    }
+
+    return formattedMsg
 }

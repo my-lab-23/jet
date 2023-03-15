@@ -1,5 +1,7 @@
 package com.example.scrivi.ui
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -17,9 +19,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.scrivi.AppDatabase
 import com.example.scrivi.MsgDB
+import com.example.scrivi.MyMessage
 import com.example.scrivi.invia
 import kotlinx.coroutines.launch
 
+@RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun MyScrivi() {
 
@@ -58,21 +62,22 @@ fun MyScrivi() {
         val coroutineScope = rememberCoroutineScope()
 
         Button(onClick = {
-            val msg = text
+            val msg = MyMessage(text)
 
             if(isConnected.value) {
                 coroutineScope.launch {
 
                     msgDao.loadAll().forEach {
-                        invia(it.msg)
+                        val msgD = MyMessage(it.msg)
+                        invia(msgD.getJsonObject())
                     }
 
                     msgDao.deleteAll()
 
-                    invia(msg)
+                    invia(msg.getJsonObject())
                 }
             } else {
-                msgDao.insert(MsgDB(msg))
+                msgDao.insert(MsgDB(msg.msg))
             }
 
             text = ""
