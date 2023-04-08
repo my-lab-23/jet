@@ -4,7 +4,7 @@ import com.soywiz.korim.color.*
 import com.soywiz.korma.geom.*
 import kotlin.random.Random
 
-class SpaceShip : Container() {
+class SpaceShip(val isEnemy: Boolean) : Container() {
 
     private val spaceShip = Container()
     var myRotation = 0

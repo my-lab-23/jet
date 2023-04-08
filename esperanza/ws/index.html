@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Inviare un messaggio d'incoraggiamento anonimo</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="cookie-banner">
+        <p>Questo sito web utilizza il localStorage per salvare il messaggio fino all'invio.<br>
+            Ti preghiamo di confermare di accettare l'utilizzo del localStorage cliccando sul pulsante qui sotto.</p>
+        <button onclick="acceptLocalStorage()">Accetto</button>
+    </div> 
+    <h1>Inviare un messaggio d'incoraggiamento anonimo</h1>
+    <form id="message-form">
+        <label for="message">Inserisci il messaggio:</label>
+        <textarea id="message" name="message" rows="8"></textarea>
+        <button type="submit">Invia il messaggio</button>
+    </form>
+    <p>Per maggiori informazioni sulla nostra politica sulla privacy, consulta la nostra <a href="privacy.html">informativa sulla privacy</a>.</p>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+Curriculum vitae di
+Emanuele Quattrini
+1. Dati anagrafici
+Data di nascita: 23/02/1984 a Roma
+Residenza: Ladispoli (Roma)
+Nazionalità: Italiana
+2. Contatti
+E-mail: emanuelequattrini@proton.me
+Telefono: 3713953160
+3. Posizione aspirata
+Sviluppatore Kotlin e/o sistemista Linux (o qualsiasi posizione che richieda competenze in 
+ambito informatico).
+In questo progetto dimostrativo, ci sono gli elementi dello stack con cui sto lavorando con 
+maggiore interesse:
+https://github.com/my-lab-23/jet/tree/master/esperanza
+4. Esperienze lavorative
+Da settembre 2021 (progetti personali)
+Progettazione di applicazioni client-server mobili, desktop e web.
+App dimostrativa sul Google Play Store:
+https://play.google.com/store/apps/details?id=it.emanueleweb.solaria
+Codice sorgente (nella root del repository ci sono altri esempi):
+https://github.com/my-lab-23/jet/tree/master/solaria
+Tecnologie utilizzate:
+Kotlin (Android SDK, Compose Android e Desktop, Ktor, Coroutines).
+Data persistence (Firebase, Room, Exposed)
+Build tool Gradle, IDE (IntelliJ IDEA, Android Studio), GitHub.
+Altre tecnologie: AlarmManager, API REST, Canvas, Jsoup, JSON, Kotlin JS, MapLibre, 
+NavController, notifiche, Spring Web, StateFlow, ViewModel.
+Settembre 2021 – Settembre 2022 (progetti personali)
+Preparazione dei dati per l’apprendimento automatico. 
+[Per esempio sto scrivendo un programma in Scala che intercetta in tempo reale i tweet con
+un determinato hashtag, li trasforma tramite tecniche di NLP (es. tokenizzazione, 
+rimozione stop words, conteggio frequenza parole etc.) e carica i dati su un sito web per la 
+visualizzazione]. https://github.com/my-lab-23
+Tecnologie utilizzate: 
+Lato client –>  Kotlin (Android SDK, Ktor, Compose).  
+Lato server –> Scala (Spark, MLlib, Akka, twitter4s, doobie), Python (NumPy, Scikit-Learn, 
+Pandas, Matplotlib, Psycopg2, PySpark).
+Build tool (Gradle, Sbt), package manager Conda, IDE (IntelliJ IDEA, PyCharm), GitHub.
+Framework Play, Rasa, Selenium, Auth0, testing JUnit, ScalaTest. 
+Settembre 2020 – Settembre 2021 (progetti personali)
+Progettazione e amministrazione di sistemi per l'automazione delle infrastrutture 
+informatiche.
+Tecnologie utilizzate: Amazon AWS (VPC per la creazione di reti virtuali sicure, istanze EC2 
+basate su Red Hat Enterprise Linux e Debian GNU/Linux, IAM e Cognito per la gestione 
+della sicurezza degli account), containerizzazione Docker, virtualizzazione QEMU/KVM.
+Monitoraggio Nagios (aggiunta hosts, plugin, NRPE, check di base, notifiche), 
+orchestrazione Puppet Bolt per l’invio in parallelo di comandi a gruppi di istanze.
+Gennaio 2005 – Settembre 2020 presso Agricola Quattrini
+Progettazione e amministrazione della rete locale dell'azienda.
+Tecnologie utilizzate: Debian GNU/Linux, NFS per la condivisione dei file, OpenOffice per la
+creazione dei documenti, CUPS per la condivisione delle stampanti di rete.
+Progettazione e amministrazione del sito web aziendale (Gennaio 2008 – Dicembre 2012).
+Tecnologie utilizzate: Debian GNU/Linux, Apache , Ruby on Rails, PostgreSQL.
+Luglio 2005 – Settembre 2005
+Progettazione di una piattaforma per la gestione di un all'allevamento di bovini nell'ambito
+di un progetto universitario. https://github.com/my-lab-23
+Tecnologie utilizzate: Slackware GNU/Linux, Ruby on Rails versione 0.12.1, PostgreSQL.
+5. Istruzione
+Aprile-Giugno 2021 Attestato Teoria delle Reti, Windows Server, Linux Server, Oracle 
+presso l’IstitutoCEFI di Roma.
+2003-2005 Crediti formativi presso il dipartimento d’informatica de La Sapienza di Roma.
+2003 Maturità scientifica presso l'istituto Isacco Newton di Roma.
+6. Competenze
+Buona conoscenza di Microsoft Windows e GNU/Linux come postazione di lavoro e dei 
+principali applicativi (es. posta elettronica, suite ufficio).
+Buona conoscenza dei principi della programmazione e dello shell scripting, in particolare 
+dei linguaggi Kotlin, Java, Scala, Javascript, Python, Ruby e C (Arduino) oltre a SQL, HTML e 
+CSS.
+Buona conoscenza delle piattaforme cloud (es. AWS, Azure).
+Buona conoscenza dei principi dell'amministrazione di rete (TCP/IP, IPv4, IPv6, DHCP, NAT,
+SSH, VPN, NFS, DNS, reverse proxy) e di GNU/Linux e dei principali applicativi in ambito 
+server:
+- database PostgreSQL (jsonb), Oracle, MySQL, Microsoft SQL Server, MariaDB;
+- monitoraggio Nagios (aggiunta hosts, plugin, NRPE, check di base, notifiche);
+- containerizzazione Docker;
+- virtualizzazione QEMU/KVM con Proxmox, Oracle VirtualBox con Vagrant,
+        Vmware (workstation);
+- orchestrazione Ansible, Puppet Bolt.
+Lingue: Italiano ed inglese tecnico informatico.
+7. Interessi
+Musica classica, fotografia, scacchi, lettura (saggi e fantascienza).

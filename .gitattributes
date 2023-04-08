@@ -1,0 +1,4 @@
+*.html linguist-language=JavaScript
+
+*.sh linguist-vendored
+*.bat linguist-vendored

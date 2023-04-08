@@ -1,0 +1,7 @@
+---
+- name: Esegui il comando sulla macchina remota
+  hosts: all
+  become: true
+  tasks:
+    - name: Esegui il comando
+      command: "/home/admin/app/bin/app"

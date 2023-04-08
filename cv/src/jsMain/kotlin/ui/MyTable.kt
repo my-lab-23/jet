@@ -11,7 +11,7 @@ import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.*
 
 @Composable
-fun myTable() {
+fun myTable(cv: List<String>) {
 
     val style = AppStylesheet
 
@@ -27,7 +27,7 @@ fun myTable() {
 
             H2 { Text("1. Dati anagrafici") }
             P { Text("Data di nascita: 23/02/1984 a Roma") }
-            P { Text("Residenza: Via delle Pleiadi, 1 - 00055 - Ladispoli") }
+            P { Text("Residenza: Ladispoli (Roma)") }
             P { Text("Nazionalità: Italiana") }
         }
 
@@ -40,15 +40,20 @@ fun myTable() {
         Div(attrs = { classes(style.row, style.dispari) }) {
 
             H2 { Text("3. Posizione aspirata") }
-            P { Text("Sviluppatore Kotlin – Scala – Java – Python " +
+
+            P { Text("Sviluppatore Kotlin " +
                     "e/o sistemista Linux (o qualsiasi posizione " +
                     "che richieda competenze in ambito informatico).") }
+
+            P { Text(cv[12] + " " + cv[13]) }
+
+            A(attrs = { href(cv[14]) }) { Text(cv[14]) }
         }
 
         Div(attrs = { classes(style.row, style.pari) }) {
 
             H2 { Text("4. Esperienze lavorative") }
-            esp0()
+            esp0(cv)
             esp1()
             esp2()
             esp3()
@@ -65,21 +70,28 @@ fun myTable() {
             P { Text("Musica classica, fotografia, scacchi, lettura (saggi e fantascienza).") }
         }
 
+        Div(attrs = { classes(style.row, style.pdf) }) {
+
+            H2 { Text("Per scaricare in formato PDF:") }
+            A(attrs = { href("https://github.com/my-lab-23/jet/blob/master/cv/pdf/cv.pdf") }) {
+                Text("https://github.com/my-lab-23/jet/blob/master/cv/pdf/cv.pdf") }
+        }
     }
 }
 
 @Composable
 fun switchButton(switch: MutableState<Int>) {
 
-    Button(attrs = {
-        onClick {
+    Button(attrs = { classes(AppStylesheet.button)
+            onClick {
 
-            switch.value = if(switch.value==0) 1 else 0
-        } }) {
+                switch.value = if (switch.value == 0) 1 else 0
+            }
+        }) {
 
-        if(switch.value==0) Text("Mostra")
-        else Text("Nascondi")
-    }
+            if (switch.value == 0) Text("Mostra")
+            else Text("Nascondi")
+        }
 }
 
 @Composable
@@ -117,7 +129,7 @@ fun comp() {
         P { Text("Buona conoscenza di Microsoft Windows e GNU/Linux come postazione di lavoro e dei " +
                 "principali applicativi (es. posta elettronica, suite ufficio).") }
         P { Text("Buona conoscenza dei principi della programmazione e dello shell scripting, in particolare " +
-                "dei linguaggi Kotlin, Scala, Java, Python, Ruby e C (Arduino).") }
+                "dei linguaggi Kotlin, Java, Scala, Javascript, Python, Ruby e C (Arduino).") }
         P { Text("Buona conoscenza delle piattaforme cloud (es. AWS, Azure).") }
         P { Text("Buona conoscenza dei principi dell'amministrazione di rete (TCP/IP, IPv4, IPv6, DHCP, NAT, " +
                 "SSH, VPN, NFS, DNS, reverse proxy) e di GNU/Linux e dei principali applicativi in ambito " +

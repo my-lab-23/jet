@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Astro</string>
+
+    <string name="com_auth0_client_id"></string>
+    <string name="com_auth0_domain"></string>
+    <string name="com_auth0_scheme">demo</string>
+</resources>

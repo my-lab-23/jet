@@ -55,7 +55,7 @@ class MyScene1(private val myDependency: MyDependency) : Scene() {
             position(300, 300)
             onClick {
                 sceneContainer.changeTo<MyScene2>()
-                println(enemy)
+                aliveEnemy = enemy
                 if(enemy<=28) enemy += 4
             }
         }

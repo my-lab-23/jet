@@ -1,0 +1,17 @@
+---
+- name: Aggiungi un nuovo utente
+  hosts: all
+  become: yes
+  
+  vars:
+    username: silver
+    password: 
+  
+  tasks:
+    - name: Creazione dell'utente
+      user:
+        name: "{{ username }}"
+        password: "{{ password | password_hash('sha512') }}"
+        state: present
+        createhome: yes
+        shell: /bin/bash

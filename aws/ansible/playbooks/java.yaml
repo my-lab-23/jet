@@ -1,0 +1,21 @@
+---
+- name: Install Java and dependencies
+  hosts: all
+  become: true
+
+  tasks:
+  - name: Update apt cache
+    apt: update_cache=yes
+
+  - name: Install Java dependencies
+    apt:
+      name:
+        - ca-certificates-java
+        - default-jre-headless
+        - default-jdk-headless
+      state: present
+
+  - name: Set JAVA_HOME environment variable
+    lineinfile:
+      path: /etc/environment
+      line: 'JAVA_HOME="/usr/lib/jvm/default-java"'

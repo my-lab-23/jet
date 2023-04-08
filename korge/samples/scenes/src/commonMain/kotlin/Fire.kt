@@ -35,6 +35,16 @@ class Fire : Container() {
                 val obj2Bounds = enemySpaceShip.globalBounds
 
                 if (obj1Bounds.intersects(obj2Bounds)) {
+
+                    if(enemySpaceShip.isEnemy) { aliveEnemy-- }
+                    else { showMsg("Hai perso!") }
+
+                    //
+
+                    if (aliveEnemy == 0) { showMsg("Hai vinto!") }
+
+                    //
+
                     removeChild(fire)
                     enemySpaceShip.removeChildren()
                     enemySpaceShip.crashed = true
@@ -64,5 +74,13 @@ class Fire : Container() {
                 isRunning = false
             }
         }
+    }
+
+    private fun showMsg(msg: String) { showDialog(msg) }
+
+    private fun Container.showDialog(msg: String) {
+        val dialogBox = DialogBox(200.0, 100.0, msg)
+        addChild(dialogBox)
+        dialogBox.position(100.0, 100.0)
     }
 }

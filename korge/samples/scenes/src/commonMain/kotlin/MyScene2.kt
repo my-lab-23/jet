@@ -8,12 +8,13 @@ import com.soywiz.korim.color.Colors
 import kotlin.random.*
 
 var enemy = 4
+var aliveEnemy = enemy
 
 class MyScene2(private val myDependency: MyDependency) : Scene() {
 
 	override suspend fun Container.sceneInit() {
 
-		val spaceShip = SpaceShip()
+		val spaceShip = SpaceShip(false)
 		spaceShip.drawSpaceShip(Colors.DARKCYAN)
 		spaceShip.moveSpaceShipFixed(256.0, 256.0)
 		addChild(spaceShip)
@@ -25,7 +26,7 @@ class MyScene2(private val myDependency: MyDependency) : Scene() {
 
 		repeat(enemy) {
 
-			val enemySpaceShip = SpaceShip()
+			val enemySpaceShip = SpaceShip(true)
 			enemySpaceShips.add(enemySpaceShip)
 			addChild(enemySpaceShip)
 			enemySpaceShip.drawSpaceShip(Colors.GOLDENROD)

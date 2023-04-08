@@ -7,7 +7,7 @@ import org.jetbrains.compose.web.attributes.href
 import org.jetbrains.compose.web.dom.*
 
 @Composable
-fun esp0 () {
+fun esp0(cv: List<String>) {
 
     val switch = remember { mutableStateOf(0) }
 
@@ -32,6 +32,7 @@ fun esp0 () {
         P { Text("Kotlin (Android SDK, Compose Android e Desktop, Ktor, Coroutines).") }
         P { Text("Data persistence (Firebase, Room, Exposed)") }
         P { Text("Build tool Gradle, IDE (IntelliJ IDEA, Android Studio), GitHub.") }
+        P { Text(cv[26] + " " + cv[27]) }
     }
 }
 

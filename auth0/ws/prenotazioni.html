@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title> Prenotazione </title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        select {
+            width: 100%;
+            height: 30px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3E%3Cpath fill='%23333' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px top 50%;
+            background-size: 8px 10px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            /* lascia spazio sotto */
+            padding-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Prenotazione</h1>
+    <p>Inserisci i tuoi dati per prenotare il servizio</p>
+    <form>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" required>
+        <label for="cognome">Cognome</label>
+        <input type="text" name="cognome" id="cognome" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <label for="telefono">Telefono</label>
+        <input type="tel" name="telefono" id="telefono" required>
+        <label for="data">Data</label>
+        <input type="date" name="data" id="data" required>
+        <label for="ora">Ora</label>
+        <input type="time" name="ora" id="ora" required>
+        <label for="servizio">Servizio</label>
+        <select name="servizio" id="servizio" required>
+            <option value="servizio1">Servizio 1</option>
+            <option value="servizio2">Servizio 2</option>
+            <option value="servizio3">Servizio 3</option>
+        </select>
+        <button onclick="prenota()">Prenota</button>
+    </form>
+    <footer>
+        <p>Per leggere gli ultimi messaggi, clicca <a href="/other/reader">qui</a>.</p>
+        <p>Se vuoi effettuare il logout, <a href="/other/logout">clicca qui</a>.</p>
+    </footer>
+    <script>
+
+        // Creo un oggetto per salvare i dati inseriti nel form
+        let dati = {
+            nome: "",
+            cognome: "",
+            email: "",
+            telefono: "",
+            data: "",
+            ora: "",
+            servizio: ""
+        };
+
+        // Creo una funzione per salvare i dati inseriti nel form
+        function salvaDati() {
+            dati.nome = document.getElementById("nome").value;
+            dati.cognome = document.getElementById("cognome").value;
+            dati.email = document.getElementById("email").value;
+            dati.telefono = document.getElementById("telefono").value;
+            dati.data = document.getElementById("data").value;
+            dati.ora = document.getElementById("ora").value;
+            dati.servizio = document.getElementById("servizio").value;
+        }
+
+        // Creo una funzione per inviare i dati al server usando fetch
+        function inviaDati() {
+
+            // Creo un oggetto per salvare i dati da inviare al server
+            let datiDaInviare = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            };
+
+            try {
+                // Tentativo di parsing dei dati in formato JSON
+                datiDaInviare.body = JSON.stringify(dati);
+            } catch (error) {
+                // In caso di errore di parsing, invio i dati come sono
+                datiDaInviare.body = dati;
+            }
+
+            // Invio i dati al server
+            fetch("https://2desperados.it/other/prenotazioni", datiDaInviare)
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error("Errore durante l'invio dei dati");
+                    }
+                    // se l'invio dei dati è andato a buon fine, reindirizza l'utente alla pagina di conferma
+                    window.location.replace("https://2desperados.it/other/grazie");
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    alert("Si è verificato un errore durante l'invio dei dati");
+                });
+        }
+
+
+        // Creo una funzione per gestire il click sul pulsante "Prenota"
+        function prenota() {
+
+            // Salvo i dati inseriti nel form
+            salvaDati();
+
+            // Validazione dei dati
+            checkData = validaData();
+
+            // Invio i dati al server
+            if (checkData) { inviaDati(); }
+        }
+
+        // Creo una funzione per validare i dati inseriti nel form
+        function validaData() {
+
+            // Controllo che i campi non siano vuoti
+            if (dati.nome == "" ||
+                dati.cognome == "" ||
+                dati.email == "" ||
+                dati.telefono == "" ||
+                dati.data == "" ||
+                dati.ora == "" ||
+                dati.servizio == "") {
+                alert("Compila tutti i campi!");
+                return false;
+            }
+
+            // Controllo che la data inserita sia successiva a quella odierna
+            let dataOdierna = new Date();
+            let dataInserita = new Date(dati.data);
+            if (dataInserita < dataOdierna) {
+                alert("La data inserita non è valida!");
+                return false;
+            }
+
+            // Controllo che l'ora inserita sia compresa tra le 8 e le 18
+            let oraInserita = dati.ora.split(":");
+            if (oraInserita[0] < 8 || oraInserita[0] > 18) {
+                alert("L'ora inserita non è valida!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

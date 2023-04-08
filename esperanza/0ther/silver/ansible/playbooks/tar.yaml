@@ -1,0 +1,21 @@
+---
+- name: Copia e spacchetta un file tar
+  hosts: all
+  gather_facts: no
+  
+  vars:
+    source_file: "/home/ema/Scrivania/desperado/esperanza_S/0ther/silver/build/distributions/com.example.silver-0.0.1.tar"
+    target_dir: "/home/silver/"
+
+  tasks:
+    - name: Copia il file tar nella home directory del server
+      copy:
+        src: "{{ source_file }}"
+        dest: "{{ target_dir }}file.tar"
+
+    - name: Estrae il contenuto del file tar
+      become: yes
+      unarchive:
+        src: "{{ target_dir }}file.tar"
+        dest: "{{ target_dir }}"
+        remote_src: yes

@@ -1,5 +1,6 @@
-import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.Style
 import org.jetbrains.compose.web.renderComposable
+import org.w3c.xhr.XMLHttpRequest
 import ui.myTable
 
 fun main() {
@@ -7,6 +8,6 @@ fun main() {
     renderComposable(rootElementId = "root") {
 
         Style(AppStylesheet)
-        myTable()
+        myTable(cv.split("\n"))
     }
 }
