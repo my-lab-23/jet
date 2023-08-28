@@ -19,55 +19,50 @@ fun myTable(cv: List<String>) {
 
         Div(attrs = { classes(style.row, style.pari) }) {
 
-            P { Text("Curriculum vitae di") }
-            H1 { Text("Emanuele Quattrini") }
+            P { Text(cv[0]) }
+            H1 { Text(cv[1]) }
         }
 
         Div(attrs = { classes(style.row, style.dispari) }) {
 
-            H2 { Text("1. Dati anagrafici") }
-            P { Text("Data di nascita: 23/02/1984 a Roma") }
-            P { Text("Residenza: Ladispoli (Roma)") }
-            P { Text("Nazionalità: Italiana") }
+            H2 { Text(cv[2]) }
+            P { Text(cv[3]) }
+            P { Text(cv[4]) }
+            P { Text(cv[5]) }
         }
 
         Div(attrs = { classes(style.row, style.pari) }) {
 
-            H2 { Text("2. Contatti") }
-            P { Text("E-mail: emanuelequattrini@proton.me") }
+            H2 { Text(cv[6]) }
+            P { Text(cv[7]) }
         }
 
         Div(attrs = { classes(style.row, style.dispari) }) {
 
-            H2 { Text("3. Posizione aspirata") }
-
-            P { Text("Sviluppatore Kotlin " +
-                    "e/o sistemista Linux (o qualsiasi posizione " +
-                    "che richieda competenze in ambito informatico).") }
-
+            H2 { Text(cv[9]) }
+            P { Text(cv[10] + " " + cv[11]) }
             P { Text(cv[12] + " " + cv[13]) }
-
             A(attrs = { href(cv[14]) }) { Text(cv[14]) }
         }
 
         Div(attrs = { classes(style.row, style.pari) }) {
 
-            H2 { Text("4. Esperienze lavorative") }
+            H2 { Text(cv[15]) }
             esp0(cv)
-            esp1()
-            esp2()
-            esp3()
-            esp4()
+            esp1(cv)
+            esp2(cv)
+            esp3(cv)
+            esp4(cv)
         }
 
-        Div(attrs = { classes(style.row, style.dispari) }) { istruzione() }
+        Div(attrs = { classes(style.row, style.dispari) }) { istruzione(cv) }
 
-        Div(attrs = { classes(style.row, style.pari) }) { comp() }
+        Div(attrs = { classes(style.row, style.pari) }) { comp(cv) }
 
         Div(attrs = { classes(style.row, style.dispari) }) {
 
-            H2 { Text("7. Interessi") }
-            P { Text("Musica classica, fotografia, scacchi, lettura (saggi e fantascienza).") }
+            H2 { Text(cv[80]) }
+            P { Text(cv[81]) }
         }
 
         Div(attrs = { classes(style.row, style.pdf) }) {
@@ -95,59 +90,63 @@ fun switchButton(switch: MutableState<Int>) {
 }
 
 @Composable
-fun istruzione() {
+fun istruzione(cv: List<String>) {
 
     val switch = remember { mutableStateOf(0) }
 
-    H2 { Text("5. Istruzione") }
+    H2 { Text(cv[58]) }
 
     switchButton(switch)
 
     if(switch.value==1) {
 
-        H3 { Text("Aprile-Giugno 2021") }
-        P { Text("Attestato Teoria delle Reti, Windows Server, Linux Server, Oracle " +
-                "presso l’IstitutoCEFI di Roma.") }
-        H3 { Text("2003-2005") }
-        P { Text("Crediti formativi presso il dipartimento d’informatica de La Sapienza di Roma.") }
-        H3 { Text("2003") }
-        P { Text("Maturità scientifica presso l'istituto Isacco Newton di Roma.") }
+        H3 { Text(cv[59]
+            .replace(" Attestato Teoria delle Reti, Windows Server, Linux Server, Oracle ", "")) }
+        P { Text(cv[59]
+            .replace("Aprile-Giugno 2021 ", "") + cv[60]) }
+
+        H3 { Text(cv[61]
+            .replace(" Crediti formativi presso il dipartimento d’informatica de La Sapienza di Roma.", "")) }
+        P { Text(cv[61]
+            .replace("2003-2005 ", "")) }
+
+        H3 { Text(cv[62]
+            .replace(" Maturità scientifica presso l'istituto Isacco Newton di Roma.", "")) }
+        P { Text(cv[62]
+            .replace("2003 ", "")) }
     }
 }
 
 @Composable
-fun comp() {
+fun comp(cv: List<String>) {
 
     val switch = remember { mutableStateOf(0) }
 
-    H2 { Text("6. Competenze") }
+    H2 { Text(cv[63]) }
 
     switchButton(switch)
 
     if(switch.value==1) {
 
-        P { Text("Buona conoscenza di Microsoft Windows e GNU/Linux come postazione di lavoro e dei " +
-                "principali applicativi (es. posta elettronica, suite ufficio).") }
-        P { Text("Buona conoscenza dei principi della programmazione e dello shell scripting, in particolare " +
-                "dei linguaggi Kotlin, Java, Scala, Javascript, Python, Ruby e C (Arduino).") }
-        P { Text("Buona conoscenza delle piattaforme cloud (es. AWS, Azure).") }
-        P { Text("Buona conoscenza dei principi dell'amministrazione di rete (TCP/IP, IPv4, IPv6, DHCP, NAT, " +
-                "SSH, VPN, NFS, DNS, reverse proxy) e di GNU/Linux e dei principali applicativi in ambito " +
-                "server:") }
+        P { Text(cv[64] + " " + cv[65]) }
+        P { Text(cv[66] + " " + cv[67] + " " + cv[68]) }
+        P { Text(cv[69]) }
+        P { Text(cv[70]) }
+        P { Text(cv[71] + " " + cv[72]) }
 
         //
 
         P( { style { paddingLeft(42.px) } }) {
 
-            P { Text("- database PostgreSQL (jsonb), Oracle, MySQL, Microsoft SQL Server, MariaDB; ") }
-            P { Text("- monitoraggio Nagios (aggiunta hosts, plugin, NRPE, check di base, notifiche); ") }
-            P { Text("- containerizzazione Docker; ") }
-            P { Text("- virtualizzazione QEMU/KVM con Proxmox, Oracle VirtualBox con Vagrant, Vmware (workstation); ") }
-            P { Text("- orchestrazione Ansible, Puppet Bolt.") }
+            P { Text(cv[73]) }
+            P { Text(cv[74]) }
+            P { Text(cv[75]) }
+            P { Text(cv[76] + " " + cv[77]) }
+            P { Text(cv[78]) }
         }
 
         //
 
-        P { Text("Lingue: Italiano ed inglese tecnico informatico.") }
+        P { Text(cv[79]) }
     }
 }

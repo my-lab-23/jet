@@ -1,0 +1,9 @@
+---
+- name: Esegui il comando sulla macchina remota
+  hosts: all
+  become: true
+  become_user: ktor
+  tasks:
+    - name: Esegui il comando
+      command: "/home/ktor/crudites.sh"
+      

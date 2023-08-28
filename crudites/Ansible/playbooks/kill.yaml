@@ -1,0 +1,13 @@
+---
+- name: Terminate Process
+  hosts: all
+  become: yes
+  tasks:
+    - name: Find and terminate the process
+      shell: "pkill -f com.example.crudites-0.0.1.jar"
+      ignore_errors: yes
+      register: kill_result
+
+    - name: Display termination result
+      debug:
+        var: kill_result.stdout_lines

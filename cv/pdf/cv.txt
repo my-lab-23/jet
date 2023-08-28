@@ -25,7 +25,7 @@ Kotlin (Android SDK, Compose Android e Desktop, Ktor, Coroutines).
 Data persistence (Firebase, Room, Exposed)
 Build tool Gradle, IDE (IntelliJ IDEA, Android Studio), GitHub.
 Altre tecnologie: AlarmManager, API REST, Canvas, Jsoup, JSON, Kotlin JS, MapLibre, 
-NavController, notifiche, Spring Web, StateFlow, ViewModel.
+NavController, notifiche, Spring Web, StateFlow, ViewModel, XML layout.
 Settembre 2021 – Settembre 2022 (progetti personali)
 Preparazione dei dati per l’apprendimento automatico. 
 [Per esempio sto scrivendo un programma in Scala che intercetta in tempo reale i tweet con
@@ -65,8 +65,8 @@ presso l’IstitutoCEFI di Roma.
 Buona conoscenza di Microsoft Windows e GNU/Linux come postazione di lavoro e dei 
 principali applicativi (es. posta elettronica, suite ufficio).
 Buona conoscenza dei principi della programmazione e dello shell scripting, in particolare 
-dei linguaggi Kotlin, Java, Scala, Javascript, Python, Ruby e C (Arduino) oltre a SQL, HTML e 
-CSS.
+dei linguaggi Kotlin, Java, Scala, Typescript, Javascript, Python, Ruby e C (Arduino) oltre a 
+SQL, HTML e CSS.
 Buona conoscenza delle piattaforme cloud (es. AWS, Azure).
 Buona conoscenza dei principi dell'amministrazione di rete (TCP/IP, IPv4, IPv6, DHCP, NAT,
 SSH, VPN, NFS, DNS, reverse proxy) e di GNU/Linux e dei principali applicativi in ambito 

@@ -1,0 +1,16 @@
+body {
+    padding: 20px;
+  }
+  .result {
+    margin-top: 20px;
+  }
+  .btn-group .btn {
+    flex: 1;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  #dApiKey {
+    margin-bottom: 15px;
+  }
+  

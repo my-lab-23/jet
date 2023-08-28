@@ -1,0 +1,44 @@
+/* Stile per il piano cartesiano */
+#cartesian-plane {
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    position: relative;
+}
+
+/* Stile per i punti */
+.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: green;
+}
+
+/* Stile per il punto rosso */
+.point.red {
+    background-color: red;
+}
+
+/* Stile per il punto verde */
+.point.green {
+    background-color: green;
+}
+
+#cartesian-plane,
+#server-input {
+    display: inline-block;
+    /* o float: left; */
+    vertical-align: top;
+    /* per allineare entrambi gli elementi in cima */
+}
+
+#server-data {
+    font-size: 23px;
+    /* Sostituisci il valore con la dimensione del font desiderata */
+}
+
+p {
+    font-size: 23px;
+    /* Sostituisci il valore con la dimensione del font desiderata */
+}

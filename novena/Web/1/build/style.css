@@ -1,0 +1,27 @@
+body {
+  background-color: cyan;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.square.green {
+  background-color: green;
+}
+
+.square.red {
+  background-color: red;
+}

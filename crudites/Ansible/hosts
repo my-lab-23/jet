@@ -1,0 +1,2 @@
+[ionosInstance]
+212.227.43.154 ansible_user=ema ansible_ssh_private_key_file=~/.ssh/id_rsa

@@ -1,0 +1,21 @@
+---
+- name: Copia e spacchetta un file tar
+  hosts: all
+  gather_facts: no
+  
+  vars:
+    source_file: "/home/ema/desperado/crudites/Server/build/distributions/com.example.crudites-0.0.1.tar"
+    target_dir: "/home/ktor/"
+
+  tasks:
+    - name: Copia il file tar nella home directory del server
+      copy:
+        src: "{{ source_file }}"
+        dest: "{{ target_dir }}file.tar"
+
+    - name: Estrae il contenuto del file tar
+      become: yes
+      unarchive:
+        src: "{{ target_dir }}file.tar"
+        dest: "{{ target_dir }}"
+        remote_src: yes

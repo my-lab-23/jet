@@ -11,117 +11,105 @@ fun esp0(cv: List<String>) {
 
     val switch = remember { mutableStateOf(0) }
 
-    H3 { Text("Da settembre 2022 (progetti personali)") }
+    H3 { Text(cv[16]) }
 
     switchButton(switch)
 
     if(switch.value==1) {
 
-        P { Text("Progettazione di applicazioni client-server mobili e desktop.") }
-        H4 { Text("App dimostrativa sul Google Play Store:") }
-
-        A(attrs = { href("https://play.google.com/store/apps/details?id=it.emanueleweb.solaria") }) {
-            Text("https://play.google.com/store/apps/details?id=it.emanueleweb.solaria") }
-
-        P { Text("Codice sorgente (nella root del repository ci sono altri esempi):") }
-
-        A (attrs = { href("https://github.com/my-lab-23/jet/tree/master/solaria") }) {
-            Text("https://github.com/my-lab-23/jet/tree/master/solaria") }
-
-        H4 { Text("Tecnologie utilizzate:") }
-        P { Text("Kotlin (Android SDK, Compose Android e Desktop, Ktor, Coroutines).") }
-        P { Text("Data persistence (Firebase, Room, Exposed)") }
-        P { Text("Build tool Gradle, IDE (IntelliJ IDEA, Android Studio), GitHub.") }
+        P { Text(cv[17]) }
+        H4 { Text(cv[18]) }
+        A(attrs = { href(cv[19]) }) { Text(cv[19]) }
+        P { Text(cv[20]) }
+        A (attrs = { href(cv[21]) }) { Text(cv[21]) }
+        H4 { Text(cv[22]) }
+        P { Text(cv[23]) }
+        P { Text(cv[24]) }
+        P { Text(cv[25]) }
         P { Text(cv[26] + " " + cv[27]) }
     }
 }
 
 @Composable
-fun esp1 () {
+fun esp1(cv: List<String>) {
 
     val switch = remember { mutableStateOf(0) }
 
-    H3 { Text("Settembre 2021 – Settembre 2022 (progetti personali)") }
+    H3 { Text(cv[28]) }
 
     switchButton(switch)
 
     if(switch.value==1) {
 
-        P { Text("Preparazione dei dati per l’apprendimento automatico.") }
-        P { Text("[Per esempio sto scrivendo un programma in Scala che intercetta in tempo reale i tweet con " +
-                "un determinato hashtag, li trasforma tramite tecniche di NLP (es. tokenizzazione," +
-                "rimozione stop words, conteggio frequenza parole etc.) e carica i dati su un sito web per la" +
-                "visualizzazione].") }
+        P { Text(cv[29]) }
+        P { Text(cv[30] + " " + " " + cv[31] + " " + cv[32] + " " + cv[33]
+            .replace(" https://github.com/my-lab-23", "")) }
 
-        A(attrs = { href("https://github.com/my-lab-23") }) {
-            Text("https://github.com/my-lab-23") }
+        val url = cv[33].replace("visualizzazione]. ", "")
 
-        H4 { Text("Tecnologie utilizzate:") }
-        P { Text("Build tool (Gradle, Sbt), package manager Conda, IDE (IntelliJ IDEA, PyCharm), GitHub.") }
-        P { Text("Lato server –> Scala (Spark, MLlib, Akka, twitter4s, doobie), Python (NumPy, Scikit-Learn, " +
-                "Pandas, Matplotlib, Psycopg2, PySpark).") }
-        P { Text("Framework Play, Rasa, Selenium, Auth0, testing JUnit, ScalaTest.") }
-        P { Text("Lato client –> Kotlin (Android SDK, Ktor, Compose).") }
+        A(attrs = { href(url) }) { Text(url) }
+
+        H4 { Text(cv[34]) }
+        P { Text(cv[35]) }
+        P { Text(cv[36] + " " + cv[37]) }
+        P { Text(cv[38]) }
+        P { Text(cv[39]) }
     }
 }
 
 @Composable
-fun esp2 () {
+fun esp2(cv: List<String>) {
 
     val switch = remember { mutableStateOf(0) }
 
-    H3 { Text("Settembre 2020 – Settembre 2021 (progetti personali)") }
+    H3 { Text(cv[40]) }
 
     switchButton(switch)
 
     if(switch.value==1) {
 
-        P { Text("Progettazione e amministrazione di sistemi per l'automazione delle infrastrutture " +
-                "informatiche.") }
-        P { Text("Tecnologie utilizzate: Amazon AWS (VPC per la creazione di reti virtuali sicure, istanze EC2 " +
-                "basate su Red Hat Enterprise Linux e Debian GNU/Linux, IAM e Cognito per la gestione " +
-                "della sicurezza degli account), containerizzazione Docker, virtualizzazione QEMU/KVM.") }
-        P { Text("Monitoraggio Nagios (aggiunta hosts, plugin, NRPE, check di base, notifiche), " +
-                "orchestrazione Puppet Bolt per l’invio in parallelo di comandi a gruppi di istanze.") }
+        P { Text(cv[41] + " " + cv[42]) }
+        P { Text(cv[43] + " " + cv[44] + " " + cv[45]) }
+        P { Text(cv[46] + " " + cv[47]) }
     }
 }
 
 @Composable
-fun esp3 () {
+fun esp3(cv: List<String>) {
 
     val switch = remember { mutableStateOf(0) }
 
-    H3 { Text("Gennaio 2005 – Settembre 2020 presso Agricola Quattrini") }
+    H3 { Text(cv[48]) }
 
     switchButton(switch)
 
     if(switch.value==1) {
 
-        P { Text("Progettazione e amministrazione della rete locale dell'azienda.") }
-        P { Text("Tecnologie utilizzate: Debian GNU/Linux, NFS per la condivisione dei file, OpenOffice per la " +
-                "creazione dei documenti, CUPS per la condivisione delle stampanti di rete.") }
-        P { Text("Progettazione e amministrazione del sito web aziendale (Gennaio 2008 – Dicembre 2012).") }
-        P { Text("Tecnologie utilizzate: Debian GNU/Linux, Apache , Ruby on Rails, PostgreSQL.") }
+        P { Text(cv[49]) }
+        P { Text(cv[50] + " " + cv[51]) }
+        P { Text(cv[52]) }
+        P { Text(cv[53]) }
     }
 }
 
 @Composable
-fun esp4 () {
+fun esp4(cv: List<String>) {
 
     val switch = remember { mutableStateOf(0) }
 
-    H3 { Text("Luglio 2005 – Settembre 2005") }
+    H3 { Text(cv[54]) }
 
     switchButton(switch)
 
     if(switch.value==1) {
 
-        P { Text("Progettazione di una piattaforma per la gestione di un all'allevamento di bovini nell'ambito " +
-                "di un progetto universitario.") }
+        P { Text(cv[55] + " " + cv[56]
+            .replace(" https://github.com/my-lab-23", "")) }
 
-        A(attrs = { href("https://github.com/my-lab-23") }) {
-            Text("https://github.com/my-lab-23") }
+        val url = cv[56].replace("di un progetto universitario. ", "")
 
-        P { Text("Tecnologie utilizzate: Slackware GNU/Linux, Ruby on Rails versione 0.12.1, PostgreSQL.") }
+        A(attrs = { href(url) }) { Text(url) }
+
+        P { Text(cv[57]) }
     }
 }
