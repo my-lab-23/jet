@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: auto;
+        }
+        .image-container img {
+            max-width: 300px;
+            max-height: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+{{#each images}}
+    <div class="image-container">
+        <a href="img/{{this.[0]}}" target="_blank">
+            <img src="img/{{this.[0]}}">
+        </a>
+        <a href="img/{{this.[1]}}" target="_blank">
+            <img src="img/{{this.[1]}}">
+        </a>
+    </div>
+{{/each}}
+</body>
+</html>

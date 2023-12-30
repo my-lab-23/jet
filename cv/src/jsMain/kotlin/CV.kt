@@ -25,7 +25,7 @@ const val cv = "Curriculum vitae di\n" +
         "Data persistence (Firebase, Room, Exposed)\n" +
         "Build tool Gradle, IDE (IntelliJ IDEA, Android Studio), GitHub.\n" +
         "Altre tecnologie: AlarmManager, API REST, Canvas, Jsoup, JSON, Kotlin JS, MapLibre, \n" +
-        "NavController, notifiche, Spring Web, StateFlow, ViewModel, XML layout.\n" +
+        "NavController, notifiche, Spring Web, StateFlow, ViewModel, XML layout, Handlebars.java.\n" +
         "Settembre 2021 – Settembre 2022 (progetti personali)\n" +
         "Preparazione dei dati per l’apprendimento automatico. \n" +
         "[Per esempio sto scrivendo un programma in Scala che intercetta in tempo reale i tweet con\n" +

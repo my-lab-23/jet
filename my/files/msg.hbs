@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invia un messaggio</title>
+</head>
+<body>
+<form action="http://0.0.0.0:8081/post/msg" method="post">
+    <label for="message">Messaggio:</label><br>
+    <input type="text" id="message" name="message"><br>
+    <input type="submit" value="Invia">
+</form>
+<p>Inviato: {{message}}</p>
+</body>
+</html>

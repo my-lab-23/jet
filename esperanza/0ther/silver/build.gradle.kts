@@ -35,3 +35,28 @@ dependencies {
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }
+
+tasks {
+
+    val distTar by getting(Tar::class) {
+
+        archiveBaseName.set("app")
+        archiveVersion.set("")
+
+        // Includi la cartella 'ws' al tar
+        into("app/ws") {
+            from("ws")
+        }
+    }
+
+    register("deploy") {
+        group = "Custom"
+        dependsOn("distTar")
+
+        doLast { deploy() }
+    }
+}
+
+fun deploy() {
+    // Il tuo codice di distribuzione qui
+}

@@ -4,8 +4,8 @@
   gather_facts: no
   
   vars:
-    source_file: "/home/ema/Scrivania/desperado/esperanza_S/0ther/silver/build/distributions/com.example.silver-0.0.1.tar"
-    target_dir: "/home/silver/"
+    source_file: "/home/ema/sesto/reFak/silver/build/distributions/app.tar"
+    target_dir: "/home/ema/test"
 
   tasks:
     - name: Copia il file tar nella home directory del server

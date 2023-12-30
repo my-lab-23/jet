@@ -1,0 +1,82 @@
+/* Questo è il file css per i 4 file HTML */
+
+/* Definisco alcuni colori da usare */
+:root {
+  --primary-color: #1a73e8;
+  --secondary-color: #f8f9fa;
+  --tertiary-color: #202124;
+}
+
+/* Imposto lo stile generale del corpo del documento */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: var(--tertiary-color);
+  background-color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Imposto lo stile del titolo principale */
+h1 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Imposto lo stile della tabella */
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Imposto lo stile delle celle della tabella */
+td, th {
+  border: 1px solid var(--primary-color);
+  padding: 10px;
+  text-align: left;
+}
+
+/* Imposto lo stile dell'intestazione della tabella */
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Imposto lo stile dei link */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Imposto lo stile dei link al passaggio del mouse */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Imposto lo stile dell'elenco puntato */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Imposto lo stile degli elementi dell'elenco puntato */
+li {
+  padding: 10px;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+/* Imposto lo stile degli elementi dell'elenco puntato al passaggio del mouse */
+li:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+li:hover a {
+  color: white;
+}

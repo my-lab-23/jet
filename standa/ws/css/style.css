@@ -1,0 +1,23 @@
+h1 {
+    font-size: 40px;
+    /* Esempio di dimensione del font per h1 */
+}
+
+p {
+    font-size: calc(0.5 * 40px);
+    /* Rende il font-size di p la metà di h1 */
+}
+
+a {
+    font-size: calc(0.5 * 40px);
+    margin-top: 15px;
+}
+
+li.active a {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+}

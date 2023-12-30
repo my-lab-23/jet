@@ -1,6 +1,6 @@
 package com.example
 
-import com.example.Roots.domain
+import com.example.Roots.DOMAIN
 import com.example.UserInfo.getUserInfoFromAuth0
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -14,7 +14,7 @@ fun Application.silver() {
 
     routing {
 
-        get("/silver/android/{access_token}/{value}") {
+        get("/$SILVER/android/{access_token}/{value}") {
 
             val accessToken = call.parameters["access_token"]
             val value = call.parameters["value"]
@@ -38,7 +38,7 @@ fun Application.silver() {
 
         //
 
-        get("/silver/ws_html") {
+        get("/$SILVER/ws_html") {
 
             val userSession: Session? = call.sessions.get()
 
@@ -47,12 +47,12 @@ fun Application.silver() {
                 val userInfo = getUserInfoFromAuth0(userSession.accessToken)
 
                 if(userInfo.email!=System.getenv("USER_EMAIL")) { login(call) }
-                else { call.respondFile(File("${Roots.ws}silver.html")) }
+                else { call.respondFile(File("${Roots.WS}silver.html")) }
 
             } else { login(call) }
         }
 
-        get("/silver/ws_values/{value}") {
+        get("/$SILVER/ws_values/{value}") {
 
             val userSession: Session? = call.sessions.get()
             val value = call.parameters["value"]
@@ -76,7 +76,7 @@ fun Application.silver() {
 
 suspend fun login(call: ApplicationCall) {
 
-    val redirectUrl = URLBuilder("${domain}silver/login").run {
+    val redirectUrl = URLBuilder("$DOMAIN$SILVER/login").run {
         parameters.append("redirectUrl", call.request.uri)
         build()
     }
@@ -88,7 +88,7 @@ fun getValues(value: String?): String {
 
     return when(value) {
 
-        "ada" -> File("${Roots.py}ada_result.txt").readText()
-        else  -> File("${Roots.py}result.txt").readText()
+        "ada" -> File("${Roots.PY}ada_result.txt").readText()
+        else  -> File("${Roots.PY}result.txt").readText()
     }
 }

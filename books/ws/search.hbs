@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compositori</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .results {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .results ul li {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Titoli che contengono il tuo messaggio</h1>
+
+<div class="results">
+    <ul>
+        {{#each this}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+</div>
+</body>
+</html>

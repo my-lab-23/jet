@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/books/style.css">
+</head>
+<body>
+<h1>Elenco autori</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Autore</th>
+        <th>Numero di libri trovati</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each this}}
+        <tr>
+            <td>{{@key}}</td>
+            <td><a href="/books/books/{{@key}}">{{this}}</a></td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+</body>
+</html>

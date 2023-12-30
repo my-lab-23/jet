@@ -5,7 +5,6 @@ import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 @Serializable
@@ -24,12 +23,12 @@ data class User(
 
 object UserInfo {
 
-    private const val url = "https://dev-zqz-kev4.eu.auth0.com/userinfo"
+    private const val URL = "https://dev-zqz-kev4.eu.auth0.com/userinfo"
     private val client = HttpClient()
 
     suspend fun getUserInfoFromAuth0(token: String): User {
 
-        val response: String = client.get(url) {
+        val response: String = client.get(URL) {
             header("Authorization", "Bearer $token")
         }.bodyAsText()
 

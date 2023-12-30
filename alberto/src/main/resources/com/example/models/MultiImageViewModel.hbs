@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>La mia pagina HTML</title>
+</head>
+<body>
+<h1>Benvenuto alla mia pagina HTML!</h1>
+<p>Qui ci sono alcuni link interessanti:</p>
+{{#each images}}
+    <a href="/static/{{sha256}}.jpg">{{titolo}}</a>
+    <p>{{descrizione}}</p>
+{{/each}}
+</body>
+</html>

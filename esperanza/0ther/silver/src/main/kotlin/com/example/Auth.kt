@@ -1,6 +1,6 @@
 package com.example
 
-import com.example.Roots.domain
+import com.example.Roots.DOMAIN
 import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.http.*
@@ -27,7 +27,7 @@ fun Application.auth(authClient: HttpClient = client) {
 
         oauth("auth-oauth-auth0") {
 
-            urlProvider = { "${domain}silver/callback" }
+            urlProvider = { "$DOMAIN$SILVER/callback" }
 
             providerLookup = {
                 OAuthServerSettings.OAuth2ServerSettings(
@@ -55,9 +55,9 @@ fun Application.auth(authClient: HttpClient = client) {
 
         authenticate("auth-oauth-auth0") {
 
-            get("/silver/login") {}
+            get("/$SILVER/login") {}
 
-            get("/silver/callback") {
+            get("/$SILVER/callback") {
 
                 val principal: OAuthAccessTokenResponse.OAuth2? = call.principal()
                 call.sessions.set(Session(principal!!.accessToken))
@@ -66,7 +66,7 @@ fun Application.auth(authClient: HttpClient = client) {
             }
         }
 
-        get("/silver/logout") {
+        get("/$SILVER/logout") {
 
             val url = "https://dev-zqz-kev4.eu.auth0.com/v2/logout?client_id=" +
                     System.getenv("AUTH0_CLIENT_ID")
@@ -74,7 +74,7 @@ fun Application.auth(authClient: HttpClient = client) {
             call.sessions.clear<Session>()
             client.get(url)
 
-            call.respondRedirect("/silver/post-logout")
+            call.respondRedirect("/$SILVER/post-logout")
         }
     }
 }

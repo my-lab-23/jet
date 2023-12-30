@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Invia un messaggio</title>
+    <link rel="stylesheet" type="text/css" href="lista.css">
+</head>
+
+<body>
+    <form action="http://0.0.0.0:8081/my/post/aggiungi" method="post">
+        <label for="message">Messaggio:</label><br>
+        <input type="text" id="message" name="message"><br>
+        <input type="submit" value="Invia">
+    </form>
+    {{#each messages}}
+        <!-- ATTENZIONE -->
+        <!-- Il codice dentro this andrebbe validato -->
+        <!-- per motivi di sicurezza. -->
+        {{{this}}}
+    {{/each}}
+    <div id="contextMenu">
+        <button id="copy">Copia</button>
+        <button id="delete">Elimina</button>
+    </div>
+    <script src="lista.js"></script>
+</body>
+
+</html>

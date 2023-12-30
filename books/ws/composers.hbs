@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/books/style.css">
+</head>
+<body>
+<h1>Elenco compositori</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Compositore</th>
+        <th>Opere raccomandate</th>
+        <th>Tutte le opere</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each this}}
+        <tr>
+            <td>{{@key}}</td>
+            <td><a href="/books/works/{{@key}}">{{this.num1}}</a></td>
+            <td><a href="/books/works/all{{@key}}">{{this.num2}}</a></td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+</body>
+</html>

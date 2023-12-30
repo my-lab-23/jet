@@ -1,9 +1,10 @@
 package com.example
 
+const val SILVER = "test"
+
 object Roots {
 
-    const val ws = "/home/silver/ws/"
-    const val py = "/home/silver/python/"
-    const val img = "/home/silver/img/"
-    const val domain = "https://2desperados.it/"
+    const val WS = "/home/ema/test/app/ws/"
+    const val PY = "/home/silver/python/"
+    const val DOMAIN = "https://2desperados.it/"
 }

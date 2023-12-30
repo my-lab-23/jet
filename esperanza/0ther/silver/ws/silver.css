@@ -1,0 +1,88 @@
+/* Stile degli elementi con classe "flag" */
+.flag {
+    display: inline-block;
+    width: 64px;
+    height: 48px;
+    background-size: auto;
+    /* Centra in verticale */
+    vertical-align: middle;
+    margin: 5px;
+}
+
+/* Stile delle valute che utilizzano il colore argento */
+.flag.CNY {
+    background-image: url('/test/img/cn.svg');
+}
+
+.flag.EUR {
+    background-image: url('/test/img/eu.svg');
+}
+
+.flag.RUB {
+    background-image: url('/test/img/ru.svg');
+}
+
+.flag.USD {
+    background-image: url('/test/img/us.svg');
+}
+
+/* Stile della tabella dei tassi di cambio */
+#exchange-rates, #price {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #808080;
+    /* un colore grigio chiaro */
+    border-radius: 5px;
+}
+
+#exchange-rates div, #price div {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #c0c0c0;
+    border-radius: 5px;
+    font-size: xx-large;
+}
+
+#exchange-rates div span, #price div span {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+body {
+    zoom: 200%;
+    background-color: lightgray;
+}
+
+/* Riduce la distanza tra la scritta "Exchange Rates" e la tabella */
+#exchange-rates-header {
+    margin-bottom: 0;
+}
+
+/* Aggiunge uno sfondo grigio chiaro alla tabella */
+#exchange-rates-table {
+    background-color: lightgray;
+}
+
+/* Rende le righe della tabella più leggibili */
+#exchange-rates-table tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+/* Rende il testo delle intestazioni di colonna in grassetto */
+#exchange-rates-table th {
+    font-weight: bold;
+}
+
+/* Rende il testo delle celle della tabella centrato verticalmente e in grassetto */
+#exchange-rates-table td {
+    text-align: center;
+    font-weight: bold;
+}
+
+#container {
+    background-color: lightgray;
+}
+
+#time {
+    color: lightgray;
+}

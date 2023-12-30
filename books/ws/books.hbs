@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/books/style.css">
+</head>
+<body>
+<h1>Lista di libri</h1>
+<ul>
+    {{#each this}}
+        <li><a href="https://openlibrary.org{{this.second}}">{{this.first}}</a></li>
+    {{/each}}
+</ul>
+</body>
+</html>
