@@ -8,7 +8,7 @@ const sendMessage = (message) => {
     msg = message
     timestamp = timeStamp()
   
-    fetch('https://2desperados.it/examples/msg', {
+    fetch('http://0.0.0.0:8086/examples/msg', {
     
     method: 'POST',
         headers: { 'Content-Type': 'application/json' },

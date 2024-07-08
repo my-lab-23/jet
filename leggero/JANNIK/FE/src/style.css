@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+#app {
+  display: block;
+  margin: auto;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+#news a {
+  display: block;
+  margin-bottom: 10px; /* Aggiusta questo valore per cambiare lo spazio tra i link */
+  /* Aggiungi un po' di margine ai lati e usa un carattere accattivante */
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2em;
+}
+
+/* Aggiungi un margine a tutti i div e i canvas */
+div, canvas {
+  margin: 20px; /* Modifica questo valore per cambiare il margine */
+}
+
+.my-custom-dropdown {
+  font-size: 40px; /* Imposta la dimensione del carattere */
+}

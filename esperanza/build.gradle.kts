@@ -3,15 +3,32 @@ val kotlin_version: String by project
 val logback_version: String by project
 
 plugins {
-    kotlin("plugin.serialization") version "1.8.0"
-    kotlin("jvm") version "1.8.0"
-    id("io.ktor.plugin") version "2.2.2"
+    kotlin("jvm") version "1.8.10"
+    id("io.ktor.plugin") version "2.2.4"
+                id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
+
+    distribution
 }
+
+//
+
+distributions {
+    main {
+        contents {
+            // aggiungi la cartella desiderata all'archivio tar
+            from("ws") {
+                into("bin/ws")
+            }
+        }
+    }
+}
+
+//
 
 group = "com.example"
 version = "0.0.1"
 application {
-    mainClass.set("com.example.ApplicationKt")
+    mainClass.set("io.ktor.server.cio.EngineMain")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")

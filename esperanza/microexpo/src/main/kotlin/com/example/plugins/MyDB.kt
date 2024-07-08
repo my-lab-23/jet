@@ -9,11 +9,14 @@ import java.text.SimpleDateFormat
 object MyDB {
 
     fun connectDB() {
+        val host = System.getenv("PG_HOST")
+        val port = System.getenv("PG_PORT")
+        val database = System.getenv("PG_DATABASE")
+        val user = System.getenv("PG_USER")
+        val password = System.getenv("PG_PASSWORD")
 
-        Database.connect(
-            "jdbc:postgresql://localhost:5432/expo", driver = "org.postgresql.Driver",
-            user = "expo", password = "expo"
-        )
+        val url = "jdbc:postgresql://$host:$port/$database"
+        Database.connect(url, driver = "org.postgresql.Driver", user = user, password = password)
     }
 
     fun resetTable() {

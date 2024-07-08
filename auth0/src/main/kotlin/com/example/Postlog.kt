@@ -10,7 +10,7 @@ fun Application.postlog() {
 
     routing {
 
-        /*get("/other/post-login") {
+        get("/other/post-login") {
 
             val userSession: UserSession? = call.sessions.get()
 
@@ -21,7 +21,7 @@ fun Application.postlog() {
             } else {
                 call.respondText("Non sei ancora loggato.")
             }
-        }*/
+        }
 
         get("/other/post-logout") {
 

@@ -6,9 +6,7 @@ import io.ktor.client.engine.cio.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import io.ktor.server.application.*
-import io.ktor.server.logging.*
-import io.ktor.server.plugins.callloging.*
-import io.ktor.server.plugins.cors.routing.*
+import io.ktor.server.http.content.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
@@ -16,11 +14,13 @@ import io.ktor.server.sessions.*
 import java.io.File
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
-import org.slf4j.event.Level
 
 fun Application.reader() {
 
     routing {
+
+        // Static plugin. Try to access `/static/index.html`
+        staticFiles("/other", File("./ws"))
 
         get("/other/reader") {
 
@@ -33,7 +33,7 @@ fun Application.reader() {
 
                 if(diff > 300_000) {
 
-                    val redirectUrl = URLBuilder("https://2desperados.it/other/login").run {
+                    val redirectUrl = URLBuilder("http://localhost:9090/other/login").run {
                         parameters.append("redirectUrl", call.request.uri)
                         build()
                     }
@@ -47,7 +47,7 @@ fun Application.reader() {
 
             } else {
 
-                val redirectUrl = URLBuilder("https://2desperados.it/other/login").run {
+                val redirectUrl = URLBuilder("http://localhost:9090/other/login").run {
                     parameters.append("redirectUrl", call.request.uri)
                     build()
                 }

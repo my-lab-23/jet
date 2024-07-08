@@ -7,7 +7,9 @@
 *.sh linguist-vendored
 *.rb linguist-vendored
 *.js linguist-language=TypeScript
+*.mjs linguist-vendored
 *.hbs linguist-vendored
+*.py linguist-vendored
 
 gradlew linguist-vendored
 gradlew_* linguist-vendored

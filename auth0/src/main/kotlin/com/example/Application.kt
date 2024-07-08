@@ -25,6 +25,7 @@ fun Application.module() {
     prenotazioni()
     postlog()
     birthday()
+    testAuth()
 }
 
 //
@@ -57,7 +58,7 @@ fun Application.main(httpClient: HttpClient = applicationHttpClient) {
 
         oauth("auth-oauth-auth0") {
 
-            urlProvider = { "https://2desperados.it/other/callback" }
+            urlProvider = { "http://localhost:9090/other/callback" }
 
             providerLookup = {
                 OAuthServerSettings.OAuth2ServerSettings(
@@ -109,4 +110,4 @@ fun Application.main(httpClient: HttpClient = applicationHttpClient) {
 }
 
 data class UserSession(val accessToken: String)
-val ws = "/home/ktor/ws"
+val ws = "/home/ema/Scrivania/Gradle/fine/k-out/auth0/ws"

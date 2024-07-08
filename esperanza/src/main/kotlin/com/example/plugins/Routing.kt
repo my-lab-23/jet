@@ -6,6 +6,7 @@ import io.ktor.server.routing.*
 import io.ktor.server.response.*
 import io.ktor.server.application.*
 import io.ktor.server.html.*
+import io.ktor.server.http.content.*
 import io.ktor.server.logging.*
 import io.ktor.server.plugins.callloging.*
 import io.ktor.server.plugins.contentnegotiation.*
@@ -18,6 +19,8 @@ import kotlinx.html.*
 import kotlinx.serialization.json.Json
 import java.io.File
 import org.slf4j.event.Level
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.time.Instant
 
 fun Application.configureRouting() {
@@ -31,8 +34,7 @@ fun Application.configureRouting() {
     }
 
     install(CORS) {
-        
-        allowHost("ema42esperanza.netlify.app", schemes = listOf("https"))
+        anyHost()
         allowHeader(HttpHeaders.ContentType)
     }
 
@@ -52,6 +54,17 @@ fun Application.configureRouting() {
     }
 
     routing {
+
+        // Static plugin. Try to access `/static/index.html`
+        staticFiles("/examples", File("./ws"))
+
+        get("/") {
+            call.respondRedirect("/examples/esperanza")
+        }
+
+        get("/examples/esperanza") {
+            call.respondFile(File("./ws/index.html"))
+        }
 
         get("/examples") {
 
@@ -86,8 +99,11 @@ fun toDB(jsonString: String) {
     createDirectoryIfNotExists("/home/ktor/data")
     val timeStamp = Instant.now().toEpochMilli()
     File("/home/ktor/data/$timeStamp").writeText(jsonString)
-    val command = "/home/ktor/Expo-1.0-SNAPSHOT/bin/Expo"
-    Runtime.getRuntime().exec(command)
+    val command = System.getenv("EXPO")
+    val log = Runtime.getRuntime().exec(command)
+    val reader = BufferedReader(InputStreamReader(log.errorStream))
+    val errorOutput = reader.readLines().joinToString("\n")
+    println("Output di errore: $errorOutput")
 }
 
 fun createDirectoryIfNotExists(directoryPath: String) {

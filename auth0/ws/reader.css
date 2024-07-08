@@ -1,0 +1,86 @@
+:root {
+  --light-background: #f1f1f1;
+  --dark-background: #333;
+  --light-text: #000;
+  --dark-text: #fff;
+}
+
+[data-theme="light"] {
+  background-color: var(--light-background);
+  color: var(--light-text);
+}
+
+[data-theme="dark"] {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  background-color: var(--light-background);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+label {
+  margin: 0.5rem 0;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+button {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: var(--light-background);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+footer {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  background-color: var(--light-background);
+}
+
+footer a {
+  color: var(--light-text);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

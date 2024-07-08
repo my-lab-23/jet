@@ -2,148 +2,41 @@
 <html>
 
 <head>
-	<title>Reader Last N</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		* {
-			box-sizing: border-box;
-		}
 
-		body {
-			font-family: sans-serif;
-			margin: 0;
-			padding: 0;
-		}
+    <head>
+        <title>Reader Last N</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/other/reader.css">
+        <script src="/other/reader.js"></script>
+    </head>
 
-		h1 {
-			text-align: center;
-			margin: 0;
-			padding: 1rem;
-			background-color: #f1f1f1;
-		}
-
-		form {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			padding: 1rem;
-		}
-
-		label {
-			margin: 0.5rem 0;
-		}
-
-		input {
-			margin: 0.5rem 0;
-			padding: 0.5rem;
-			border: 1px solid #ccc;
-			border-radius: 0.25rem;
-		}
-
-		button {
-			margin: 0.5rem 0;
-			padding: 0.5rem;
-			border: 1px solid #ccc;
-			border-radius: 0.25rem;
-			background-color: #f1f1f1;
-		}
-
-		table {
-			width: 100%;
-			border-collapse: collapse;
-		}
-
-		th,
-		td {
-			padding: 0.5rem;
-			border: 1px solid #ccc;
-		}
-
-		footer {
-			text-align: center;
-			margin: 0;
-			padding: 1rem;
-			background-color: #f1f1f1;
-		}
-
-		footer a {
-			color: #000;
-			text-decoration: none;
-		}
-
-		footer a:hover {
-			text-decoration: underline;
-		}
-	</style>
 </head>
 
-<body>
-	<h1>Reader Last N</h1>
-	<form>
-		<label for="numValues">Number of values:</label>
-		<input type="number" id="numValues" name="numValues" value="5">
-		<button type="submit">Update</button>
-	</form>
-	<table>
-		<thead>
-			<tr>
-				<th>Index</th>
-				<th>Message</th>
-				<th>Timestamp</th>
-			</tr>
-		</thead>
-		<tbody id="last-data">
-			<!-- Il contenuto della tabella verrà generato dinamicamente tramite JavaScript -->
-		</tbody>
-	</table>
-	<footer>
-		<p>Per effettuare una prenotazione, clicca <a href="/other">qui</a>.</p>
+<body data-theme="light">
+    <h1>Reader Last N</h1>
+    <form>
+        <label for="numValues">Number of values:</label>
+        <input type="number" id="numValues" name="numValues" value="5">
+        <button type="submit" id="updateButton">Update</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Message</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody id="last-data">
+            <!-- Il contenuto della tabella verrà generato dinamicamente tramite JavaScript -->
+        </tbody>
+    </table>
+    <footer>
+        <p>Per effettuare una prenotazione, clicca <a href="/other">qui</a>.</p>
         <p>Se vuoi effettuare il logout, <a href="/other/logout">clicca qui</a>.</p>
     </footer>
-	<script>
-		const form = document.querySelector('form');
-		form.addEventListener('submit', event => {
-			event.preventDefault();
-			const numValues = document.querySelector('#numValues').value;
-			console.log('numValues:', numValues);
-			fetch(`https://2desperados.it/other/reader/last/${numValues}`)
-				.then(response => {
-					if (!response.ok) {
-						throw new Error('Network response was not ok');
-					}
-					return response.text();
-				})
-				.then(text => {
-					// If the text is "You are not allowed to read the messages.", display an error message
-					if (text === "You are not allowed to read the messages.") {
-						const error = document.createElement('p');
-						error.textContent = "You are not authorized to view this data.";
-						document.querySelector('#last-data').appendChild(error);
-					} else {
-						// Convert the text into an array of JSON objects
-						const data = text.trim().split('\n').map(JSON.parse);
 
-						// Generate the content of the HTML table
-						const tbody = document.querySelector('#last-data');
-						tbody.innerHTML = ''; // Clear the table before regenerating it
-						data.forEach((obj, index) => {
-							const tr = document.createElement('tr');
-							tr.innerHTML = `
-                <td>${index}</td>
-                <td>${obj.msg}</td>
-                <td>${obj.timestamp}</td>
-            `;
-							tbody.appendChild(tr);
-						});
-					}
-				});
-
-		})
-			.catch(error => {
-				console.error('There has been a problem with your fetch operation:', error);
-			});
-	</script>
 </body>
 
 </html>

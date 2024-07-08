@@ -1,0 +1,19 @@
+{
+  "name": "sincro",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "BROWSER='firefox' vite --open",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "dropbox": "^10.34.0",
+    "@types/jquery": "^3.5.30"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1"
+  }
+}

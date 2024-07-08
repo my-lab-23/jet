@@ -12,7 +12,6 @@ plugins {
 
 //
 
-// definisci la configurazione del plugin Tar
 distributions {
     main {
         contents {
