@@ -1,0 +1,128 @@
+/* main.css */
+
+/* Impostazioni generali */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Sfondo scuro */
+    color: #e0e0e0; /* Testo chiaro */
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Impostazioni per i link */
+a {
+    color: #bb86fc; /* Colore viola chiaro per i link */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3700b3; /* Colore viola più scuro al passaggio del mouse */
+}
+
+/* Header */
+header {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Bottoni */
+button {
+    background-color: #6200ea; /* Colore viola scuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3700b3; /* Colore viola più scuro al passaggio del mouse */
+}
+
+/* Input di testo */
+input[type="text"], input[type="password"], textarea {
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    border-color: #bb86fc; /* Colore viola chiaro al focus */
+    outline: none;
+}
+
+/* Container principale */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #181818;
+    border-radius: 8px;
+}
+
+/* Stile per le tabelle */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+table th {
+    background-color: #1f1f1f;
+}
+
+table tr:hover {
+    background-color: #333;
+}
+
+/* Sidebar (se presente) */
+.sidebar {
+    width: 250px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: #e0e0e0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Stile per le card */
+.card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: #bb86fc;
+}
+
+/* Footer */
+footer {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 10px 0;
+}

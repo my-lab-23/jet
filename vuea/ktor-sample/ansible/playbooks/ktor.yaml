@@ -1,0 +1,50 @@
+- name: Playbook per gestire ktor-sample
+  hosts: all
+  become: yes
+  become_user: ema
+  vars:
+    admin_email: "{{ lookup('env', 'ADMIN_EMAIL') }}"
+  tasks:
+    - name: Rimuovere la cartella ktor-sample-0.0.1
+      ansible.builtin.file:
+        path: /home/ema/ktor-sample-0.0.1
+        state: absent
+
+    - name: Rimuovere il file ktor-sample-0.0.1.tar
+      ansible.builtin.file:
+        path: /home/ema/ktor-sample-0.0.1.tar
+        state: absent
+
+    - name: Trasferire il file ktor-sample-0.0.1.tar
+      ansible.builtin.copy:
+        src: /home/ema/Scrivania/vue/kv/vuea/ktor-sample/build/distributions/ktor-sample-0.0.1.tar
+        dest: /home/ema/ktor-sample-0.0.1.tar
+
+    - name: Estrarre il file ktor-sample-0.0.1.tar
+      ansible.builtin.unarchive:
+        src: /home/ema/ktor-sample-0.0.1.tar
+        dest: /home/ema
+        remote_src: yes
+
+    - name: Verificare se il processo ktor-sample è in esecuzione
+      ansible.builtin.shell: "pgrep -f 'ktor-sample'"
+      register: ktor_process
+      ignore_errors: yes
+
+    - name: Terminare il processo ktor-sample esistente se in esecuzione
+      ansible.builtin.shell: "kill -9 {{ item }}"
+      loop: "{{ ktor_process.stdout_lines }}"
+      when: ktor_process.stdout | length > 0
+      ignore_errors: yes
+
+    - name: Avviare il nuovo processo ktor-sample in background
+      ansible.builtin.shell: |
+        export ADMIN_EMAIL={{ admin_email }}
+        nohup /home/ema/ktor-sample-0.0.1/bin/ktor-sample > /home/ema/ktor-sample.log 2>&1 &
+        disown
+      args:
+        chdir: /home/ema/ktor-sample-0.0.1/bin/
+        executable: /bin/bash
+      async: 0
+      ignore_errors: yes
+        

@@ -1,0 +1,16 @@
+/* Variabili per il tema scuro */
+:root {
+  --color-text: #fff;
+  --color-bg: #121212;
+  --color-primary: hsla(160, 100%, 47%, 1);
+  --color-primary-hover: hsla(160, 100%, 47%, 0.3);
+}
+
+/* Stile generale del corpo */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0
+}
