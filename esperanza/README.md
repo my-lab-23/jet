@@ -20,8 +20,9 @@ Sito per mandare incoraggiamenti anonimi.
 
 - HTML: linguaggio di markup per la creazione di pagine web
 - CSS: linguaggio per la definizione di stili di presentazione per pagine web
-- Javascript: linguaggio di programmazione per il lato client delle applicazioni web.
+- Javascript: linguaggio di programmazione per il lato client delle applicazioni web
+- Vue: declarative framework per la creazione di interfacce utente
 
-Grazie a Ionos, CloudFlare, Let's Encrypt.
+Grazie a Ionos, CloudFlare, Let's Encrypt
 
 https://ema42esperanza.netlify.app
