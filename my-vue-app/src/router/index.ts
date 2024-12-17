@@ -1,17 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
 import Jwt from '@/components/Jwt.vue';
 import Posizione from '@/components/Posizione.vue';
 import Camera from "@/components/Camera.vue";
+import PlaceHolder from "@/components/PlaceHolder.vue";
 
 const router = createRouter({
-  history: createWebHashHistory(), // Cambiato da createWebHistory a createWebHashHistory
+  history: createWebHashHistory(),
   routes: [
-    {
-      path: '/home',
-      name: 'home',
-      component: HomeView,
-    },
     {
       path: '/jwt',
       name: 'jwt',
@@ -28,13 +23,17 @@ const router = createRouter({
       component: Camera,
     },
     {
+      path: '/home',
+      name: 'home',
+      component: PlaceHolder,
+      props: { message: 'Welcome to the Home page!' },
+    },
+    {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
+      component: PlaceHolder,
+      props: { message: 'Learn more About us.' },
+    }
   ],
 });
 

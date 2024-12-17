@@ -64,8 +64,11 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh; /* Cambiato da height a min-height */
   padding: 1rem;
+  box-sizing: border-box; /* Garantisce che il padding non aumenti l'altezza totale */
+  overflow: hidden; /* Prevenzione di overflow */
+  margin: 0; /* Rimuove margini indesiderati */
 }
 
 /* Logo */
