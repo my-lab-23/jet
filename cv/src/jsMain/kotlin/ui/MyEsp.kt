@@ -18,8 +18,8 @@ fun esp0(cv: List<String>) {
     if(switch.value==1) {
 
         P { Text(cv[17]) }
-        H4 { Text(cv[18]) }
-        A(attrs = { href(cv[19]) }) { Text(cv[19]) }
+        // H4 { Text(cv[18]) }
+        // A(attrs = { href(cv[19]) }) { Text(cv[19]) }
         P { Text(cv[20]) }
         A (attrs = { href(cv[21]) }) { Text(cv[21]) }
         H4 { Text(cv[22]) }

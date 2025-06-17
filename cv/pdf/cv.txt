@@ -16,16 +16,15 @@ https://github.com/my-lab-23/jet/tree/master/esperanza
 4. Esperienze lavorative
 Da settembre 2021 (progetti personali)
 Progettazione di applicazioni client-server mobili, desktop e web.
-App dimostrativa sul Google Play Store:
-https://play.google.com/store/apps/details?id=it.emanueleweb.solaria
-Codice sorgente (nella root del repository ci sono altri esempi):
+Codice sorgente app dimostrativa (nella root del repository ci sono altri esempi):
 https://github.com/my-lab-23/jet/tree/master/solaria
 Tecnologie utilizzate:
 Kotlin (Android SDK, Compose Android e Desktop, Ktor, Coroutines).
 Data persistence (Firebase, Room, Exposed)
 Build tool Gradle, IDE (IntelliJ IDEA, Android Studio), GitHub.
 Altre tecnologie: AlarmManager, API REST, Canvas, Jsoup, JSON, Kotlin JS, MapLibre, 
-NavController, notifiche, Spring Web, StateFlow, ViewModel, XML layout.
+NavController, notifiche, Spring Web, StateFlow, ViewModel, XML layout, Handlebars.java, 
+Vue (anche con Capacitor per Android).
 Settembre 2021 – Settembre 2022 (progetti personali)
 Preparazione dei dati per l’apprendimento automatico. 
 [Per esempio sto scrivendo un programma in Scala che intercetta in tempo reale i tweet con

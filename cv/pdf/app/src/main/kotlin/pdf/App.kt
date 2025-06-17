@@ -11,7 +11,7 @@ fun main() { readPDF() }
 
 fun readPDF() {
 
-    val document = PDDocument.load(File("./cv.pdf"))
+    val document = PDDocument.load(File("/home/ema/Scrivania/jet/cv/pdf/cv.pdf"))
     val stripper = PDFTextStripper()
     val text = stripper.getText(document)
 

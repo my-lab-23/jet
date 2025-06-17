@@ -16,16 +16,16 @@ const val cv = "Curriculum vitae di\n" +
         "4. Esperienze lavorative\n" +
         "Da settembre 2021 (progetti personali)\n" +
         "Progettazione di applicazioni client-server mobili, desktop e web.\n" +
-        "App dimostrativa sul Google Play Store:\n" +
-        "https://play.google.com/store/apps/details?id=it.emanueleweb.solaria\n" +
-        "Codice sorgente (nella root del repository ci sono altri esempi):\n" +
+        "---\n" +
+        "---\n" +
+        "Codice sorgente app dimostrativa (nella root del repository ci sono altri esempi):\n" +
         "https://github.com/my-lab-23/jet/tree/master/solaria\n" +
         "Tecnologie utilizzate:\n" +
         "Kotlin (Android SDK, Compose Android e Desktop, Ktor, Coroutines).\n" +
         "Data persistence (Firebase, Room, Exposed)\n" +
         "Build tool Gradle, IDE (IntelliJ IDEA, Android Studio), GitHub.\n" +
         "Altre tecnologie: AlarmManager, API REST, Canvas, Jsoup, JSON, Kotlin JS, MapLibre, \n" +
-        "NavController, notifiche, Spring Web, StateFlow, ViewModel, XML layout, Handlebars.java.\n" +
+        "NavController, notifiche, Spring Web, StateFlow, ViewModel, XML layout, Handlebars.java, Vue (anche con Capacitor per Android).\n" +
         "Settembre 2021 – Settembre 2022 (progetti personali)\n" +
         "Preparazione dei dati per l’apprendimento automatico. \n" +
         "[Per esempio sto scrivendo un programma in Scala che intercetta in tempo reale i tweet con\n" +
